@@ -1,25 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styles from './App.scss';
+import classNames from 'classnames/bind';
+import Button from './components/Button';
+import StyledButton from './components/StyledButton';
+
+const cx = classNames.bind(styles);
+
+// console.log(styles)
 
 class App extends Component {
   render() {
+    const isBlue = true;
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      // <div className={[styles.box, styles.blue].join(' ')}></div>
+      // <div className={classNames(styles.box, styles.blue)}></div>
+      // <div className={cx('box', 'blue')}></div>
+      
+      // <div className={cx('box', {
+      //   blue: isBlue
+      // })}>
+      //   <div className={cx('box-inside')}>
+      //   </div>
+      // </div>
+
+      // button
+      // <div>
+      //   <Button>button</Button>
+      // </div>
+
+
+      <div>
+          <StyledButton big>button</StyledButton>
       </div>
     );
   }
